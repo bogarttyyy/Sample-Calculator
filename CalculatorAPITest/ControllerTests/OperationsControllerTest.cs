@@ -1,4 +1,6 @@
 ﻿using CalculatorAPI.Controllers;
+using Microsoft.Extensions.Logging;
+using Moq;
 
 namespace CalculatorAPITest.ControllerTests
 {
@@ -8,7 +10,8 @@ namespace CalculatorAPITest.ControllerTests
 
         public OperationsControllerTest()
         {
-            _controller = new OperationsController();
+            var mockLogger = new Mock<ILogger<OperationsController>>();
+            _controller = new OperationsController(mockLogger.Object);
         }
 
         [Fact]
