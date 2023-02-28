@@ -15,7 +15,7 @@ namespace CalculatorBlazorClient.Services
 
         public async Task<bool> IsServiceLive()
         {
-            var response = await httpClient.GetAsync($"api/Operations/Live");
+            var response = await httpClient.GetAsync($"api/Operations/IsLive");
 
             return response.IsSuccessStatusCode;
         }
@@ -24,45 +24,32 @@ namespace CalculatorBlazorClient.Services
         {
             var response = await httpClient.GetAsync($"api/Operations/Add?number1={num1}&number2={num2}");
 
-            if (response.IsSuccessStatusCode)
-            {
-                return await response.Content.ReadFromJsonAsync<decimal?>();
-            }
-
-            return null;
+            return await ProcessResponse(response);
         }
 
         public async Task<decimal?> GetSubtract(decimal num1, decimal num2)
         {
             var response = await httpClient.GetAsync($"api/Operations/Subtract?number1={num1}&number2={num2}");
-
-            if (decimal.TryParse(response.Content.ToString(), out decimal result))
-            {
-                return result;
-            }
-
-            return null;
+            return await ProcessResponse(response);
         }
 
         public async Task<decimal?> GetMultiply(decimal num1, decimal num2)
         {
             var response = await httpClient.GetAsync($"api/Operations/Multiply?number1={num1}&number2={num2}");
-
-            if (decimal.TryParse(response.Content.ToString(), out decimal result))
-            {
-                return result;
-            }
-
-            return null;
+            return await ProcessResponse(response);
         }
 
         public async Task<decimal?> GetDivide(decimal num1, decimal num2)
         {
             var response = await httpClient.GetAsync($"api/Operations/Divide?number1={num1}&number2={num2}");
+            return await ProcessResponse(response);
+        }
 
-            if (decimal.TryParse(response.Content.ToString(), out decimal result))
+        private async Task<decimal?> ProcessResponse(HttpResponseMessage response)
+        {
+            if (response.IsSuccessStatusCode)
             {
-                return result;
+                return await response.Content.ReadFromJsonAsync<decimal?>();
             }
 
             return null;

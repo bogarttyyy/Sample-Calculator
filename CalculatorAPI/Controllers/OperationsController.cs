@@ -16,6 +16,13 @@ namespace CalculatorAPI.Controllers
             _logger = logger;
         }
 
+        [Route("IsLive")]
+        [HttpGet]
+        public bool IsLive()
+        {
+            return true;
+        }
+
         /// <summary>
         /// Adds the two decimal parameters
         /// </summary>
