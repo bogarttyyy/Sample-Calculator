@@ -1,12 +1,12 @@
 ﻿using CalculatorAPI.Controllers;
 
-namespace CalculatorAPITest
+namespace CalculatorAPITest.ControllerTests
 {
-    public class OperationsTest
+    public class OperationsControllerTest
     {
         private readonly OperationsController _controller;
 
-        public OperationsTest()
+        public OperationsControllerTest()
         {
             _controller = new OperationsController();
         }
