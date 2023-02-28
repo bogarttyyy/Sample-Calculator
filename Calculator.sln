@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorAPI", "Calculator
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorAPITest", "CalculatorAPITest\CalculatorAPITest.csproj", "{3CBCCCD5-46B2-4C6D-AFA3-74CCD5AD5B86}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorBlazorClient", "CalculatorBlazorClient\CalculatorBlazorClient.csproj", "{95EB199C-F4F3-4969-AE66-9E83DF5193FC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D9F4638E-1EDA-4165-8AC6-625A4F62D7EB} = {D9F4638E-1EDA-4165-8AC6-625A4F62D7EB}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +26,10 @@ Global
 		{3CBCCCD5-46B2-4C6D-AFA3-74CCD5AD5B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CBCCCD5-46B2-4C6D-AFA3-74CCD5AD5B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CBCCCD5-46B2-4C6D-AFA3-74CCD5AD5B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95EB199C-F4F3-4969-AE66-9E83DF5193FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95EB199C-F4F3-4969-AE66-9E83DF5193FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95EB199C-F4F3-4969-AE66-9E83DF5193FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95EB199C-F4F3-4969-AE66-9E83DF5193FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

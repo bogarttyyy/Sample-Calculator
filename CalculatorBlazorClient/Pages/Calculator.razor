@@ -1,0 +1,23 @@
+﻿@page "/calculator"
+
+<h3>Calculator Operations via API Call</h3>
+
+<div class="calculator">
+    <div class="calculator-input">
+        <label>Input 1</label>
+        <input @bind="Input1"/>
+        <label>Input 2</label>
+        <input @bind="Input2" />
+    </div>
+    <br />
+    <div class="calculator-ops">
+        <button @onclick="Add">Add</button>
+        <button @onclick="Subtract">Subtract</button>
+        <button @onclick="Multiply">Multiply</button>
+        <button @onclick="Divide">Divide</button>
+    </div>
+    <br />
+    <div class="calculator-result">
+        <label>Result: <span>@Result</span></label>
+    </div>
+</div>
