@@ -15,6 +15,12 @@ namespace CalculatorAPITest.ControllerTests
         }
 
         [Fact]
+        public void IsLive_WhenCalled_ShouldReturnTrue()
+        {
+            Assert.True(_controller.IsLive());
+        }
+
+        [Fact]
         public void GetByAddition_WhenCalled_AddsValues()
         {
             Assert.Equal(10, _controller.GetByAddition(2, 8));
